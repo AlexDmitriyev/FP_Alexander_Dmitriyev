@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alexander Dmitriyev Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    </noscript>
+    <link href="css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="css/aos.css?ver=1.2.0" rel="stylesheet">
+    <link href="css/main.css?ver=1.2.0" rel="stylesheet">
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body id="top">
+    <div class="page-content">
+      <div class="container">
+        <div class="cover shadow-lg bg-white">
+          <hr class="d-print-none"/>
+          <div class="contant-section px-3 px-lg-4 pb-4" id="contact">
+            <h2 class="h3 text mb-3">Check whether the word is palindrom</h2>
+            <div class="row">
+              <div class="col-md-7 d-print-none">
+                <div class="my-2">
+	              <form>
+	                <div class="row">
+	                  <div class="col-6">
+	      	            <input class="form-control" type="text" id="wordToCheck" name="wordToCheck" placeholder="Enter word" required>
+	                  </div>
+	                  <div class="col-6">
+	  	             <button class="btn btn-primary mt-6" onClick="isPalindrom()">Check</button>
+	                  </div>
+	                </div>
+	              </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <script>
+	    function isPalindrom() 
+	    {
+	       const value = document.getElementById('wordToCheck').value
+	       if (value) {
+	          const reversed = value.split("").reverse().join("");
+	          if (reversed === value)
+	            alert("String is palindrom");
+	          else
+	            alert("String is not palindrom");				
+	       }
+	    }
+    </script>
+  </body>
+</html>
