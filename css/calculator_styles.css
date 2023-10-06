@@ -1,0 +1,115 @@
+:root {
+  --btn-background-color: #EFEFEF;
+  --btn-border-color: #909090;
+  --digit-btn-text-color: #808080;
+  --btn-hover-color: #E5E5E5;
+  --reset-btn-background-color: #F19654;
+  --reset-btn-hover-color: #F08E46;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 6rem 6rem 6rem 6rem;
+  grid-gap: 0.5rem;
+  width: 25.5rem;
+  background-color: #A0A0A0A0;
+  padding: 0.5rem;
+}
+
+.grid-container > button {
+  
+  text-align: center;
+  padding: 0.5rem 0;  
+  font-size: 1.3rem;
+}
+
+.grid-container > div { 
+	background-color: parentColor;
+}
+
+.btn_row1 {
+	grid-row: 2;
+    margin-bottom: 0.5rem;
+}
+
+.btn_row2 {
+	grid-row: 3;
+}
+
+.btn_row3 {
+	grid-row: 4;
+}
+
+.btn_row4 {
+	grid-row: 5;
+}
+
+.btn_row5 {
+	grid-row: 6;
+}
+
+.btn_row6 {
+	grid-row: 7;
+}
+
+.digit_btn {
+    background-color: var(--btn-background-color);
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: var(--btn-border-color);
+    color: var(--digit-btn-text);
+}
+
+.digit_btn:hover {
+	background-color: var(--btn-hover-color);
+}
+
+.digit_btn:active {
+  background-color: var(--btn-background-color);
+  transform: translateY(1px);
+}
+
+.func_btn {
+    background-color: var(--btn-background-color);
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: var(--btn-border-color);
+}
+
+.func_btn:hover {
+	background-color: var(--btn-hover-color);
+}
+
+.func_btn:active {
+  background-color: var(--btn-background-color);
+  transform: translateY(1px);
+}
+
+.c_btn {
+    background-color: var(--reset-btn-background-color);
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: var(--btn-border-color);
+}
+
+.c_btn:hover {
+	background-color: var(--reset-btn-hover-color);
+}
+
+.c_btn:active {
+  background-color: var(--reset-btn-background-color);
+  transform: translateY(1px);
+}
+
+
+sup {
+	font-size: 0.8rem;
+}
+
+.grid-container > input {
+  
+  text-align: right;
+  padding: 0.5rem 0.5rem;
+  font-size: 30px;
+  width: 24.2rem;
+}
