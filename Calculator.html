@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 <head>
 <style>
+
+:root {
+  --btn-background-color: #EFEFEF;
+  --btn-border-color: #909090;
+  --digit-btn-text-color: #808080;
+  --btn-hover-color: #E5E5E5;
+  --reset-btn-background-color: #F19654;
+  --reset-btn-hover-color: #F08E46;
+}
 
 .grid-container {
   display: grid;
@@ -49,51 +59,51 @@
 }
 
 .digit_btn {
-	background-color:#EFEFEF;
+    background-color: var(--btn-background-color);
     border: 1px solid;
     border-radius: 5px;
-    border-color: #909090;
-    color: #808080;
+    border-color: var(--btn-border-color);
+    color: var(--digit-btn-text);
 }
 
 .digit_btn:hover {
-	background-color: #E5E5E5;
+	background-color: var(--btn-hover-color);
 }
 
 .digit_btn:active {
-  background-color: #EFEFEF;
+  background-color: var(--btn-background-color);
   transform: translateY(1px);
 }
 
 .func_btn {
-	background-color:#EFEFEF;
+    background-color: var(--btn-background-color);
     border: 1px solid;
     border-radius: 5px;
-    border-color: #909090;
+    border-color: var(--btn-border-color);
 }
 
 .func_btn:hover {
-	background-color: #E5E5E5;
+	background-color: var(--btn-hover-color);
 }
 
 .func_btn:active {
-  background-color: #EFEFEF;
+  background-color: var(--btn-background-color);
   transform: translateY(1px);
 }
 
 .c_btn {
-	background-color:#F19654;
+    background-color: var(--reset-btn-background-color);
     border: 1px solid;
     border-radius: 5px;
-    border-color: #909090;
+    border-color: var(--btn-border-color);
 }
 
 .c_btn:hover {
-	background-color: #F08E46;
+	background-color: var(--reset-btn-hover-color);
 }
 
 .c_btn:active {
-  background-color: #F19654;
+  background-color: var(--reset-btn-background-color);
   transform: translateY(1px);
 }
 
@@ -118,7 +128,7 @@ sup {
 
 <div class="grid-container">
   <input readonly id="id_input" value=0>
-  <button class="item1 btn_row1 func_btn" onClick=onClickSqrt()>sqrt</button>
+  <button class="item1 btn_row1 func_btn" onClick=onClickSqrt()>&#x221Ax</button>
   <button class="item2 btn_row1 func_btn" onClick=onClick2ArgOperation(pow)>x<sup>y</sup></button>
   <button class="item3 btn_row1 func_btn" onClick=onClickClear()>clear</button>  
   <button class="item4 btn_row1 c_btn" onClick=onClickReset()>C</button>
