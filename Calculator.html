@@ -135,7 +135,7 @@ sup {
   <button class="item12 btn_row4 digit_btn" id="num_9" onClick=onClickNum(9)>9</button>  
   <button class="item13 btn_row4 func_btn" onClick=onClick2ArgOperation(multiply)>*</button>  
   <button class="item14 btn_row5 digit_btn" id="num_0" onClick=onClickNum(0)>0</button>  
-  <div class="item10 btn_row5"></div>
+  <button class="item15 btn_row5 func_btn" onClick=onClickPoint()>.</button>
   <div class="item11 btn_row5"></div> 
   <button class="item12 btn_row5 func_btn" onClick=onClick2ArgOperation(divide)>/</button>  
   <div class="item10 btn_row6"></div>
@@ -145,8 +145,9 @@ sup {
 </div>
     <script>
     	let fun = null
-        let arg1 = ''
+        let arg1 = '0'
         let arg2 = ''
+        let digits = 23
         
         const add = function(x) {
           return y => x + y
@@ -161,11 +162,11 @@ sup {
         }                
         
         const divide = function(x) {
-          return y => parseInt(x / y)
+          return y => x / y
         }                       
         
         const pow = function(x) {
-          return y => parseInt(Math.pow(x , y))
+          return y => Math.pow(x , y)
         }                              
         
         function operatorString(f) {
@@ -192,9 +193,25 @@ sup {
            }
         }
         
+        function onClickPoint() {
+          if (fun===null) {
+          	if (arg1 != '-' && arg1.indexOf('.') == -1) {
+            	arg1 += '.'
+                document.getElementById('id_input').value += '.'
+            }
+          }
+          else {
+          	if (arg2.length > 0 && arg2 != '-' && arg2.indexOf('.') == -1) {
+            	arg2 += '.'
+                document.getElementById('id_input').value += '.'
+            }          
+          }
+        }
+        
+        
        function onClickSqrt() {
           if (fun===null)
-            arg1 = '' + parseInt(Math.sqrt(arg1))
+            arg1 = '' + Math.sqrt(arg1)
             document.getElementById('id_input').value = arg1
         }
          
@@ -265,7 +282,7 @@ sup {
             	document.getElementById('id_input').value = value.slice(0, -1)
             }
             else {
-          		arg1 = ''
+          		arg1 = '0'
             	document.getElementById('id_input').value = '0'
             }
             
