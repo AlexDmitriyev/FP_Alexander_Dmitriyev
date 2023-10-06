@@ -57,7 +57,7 @@
     border: 1px solid;
     border-radius: 5px;
     border-color: var(--btn-border-color);
-    color: var(--digit-btn-text);
+    color: var(--digit-btn-text-color);
 }
 
 .digit_btn:hover {
