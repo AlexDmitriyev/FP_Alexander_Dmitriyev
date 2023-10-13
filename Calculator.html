@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="css/calculator_styles.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Calculator</h1>
+
+<div class="grid-container">
+  <input readonly id="id_input" value=0>
+  <button class="item1 btn_row1 func_btn" onClick=onClickSqrt()>&#x221Ax</button>
+  <button class="item2 btn_row1 func_btn" onClick=onClick2ArgOperation(pow)>x<sup>y</sup></button>
+  <button class="item3 btn_row1 func_btn" onClick=onClickClear()>clear</button>  
+  <button class="item4 btn_row1 c_btn" onClick=onClickReset()>C</button>
+  <button class="item5 btn_row2 digit_btn" id="num_1" onClick=onClickNum(1)>1</button>
+  <button class="item6 btn_row2 digit_btn" id="num_2" onClick=onClickNum(2)>2</button>
+  <button class="item7 btn_row2 digit_btn" id="num_3" onClick=onClickNum(3)>3</button>
+  <button class="item8 btn_row2 func_btn" onClick=onClick2ArgOperation(add)>+</button>
+  <button class="item9 btn_row3 digit_btn" id="num_4" onClick=onClickNum(4)>4</button>
+  <button class="item10 btn_row3 digit_btn" id="num_5" onClick=onClickNum(5)>5</button>
+  <button class="item11 btn_row3 digit_btn" id="num_6" onClick=onClickNum(6)>6</button>
+  <button class="item12 btn_row3 func_btn" onClick=onClick2ArgOperation(subtract)>-</button>
+  <button class="item10 btn_row4 digit_btn" id="num_7" onClick=onClickNum(7)>7</button>
+  <button class="item11 btn_row4 digit_btn" id="num_8" onClick=onClickNum(8)>8</button>
+  <button class="item12 btn_row4 digit_btn" id="num_9" onClick=onClickNum(9)>9</button>  
+  <button class="item13 btn_row4 func_btn" onClick=onClick2ArgOperation(multiply)>*</button>  
+  <button class="item14 btn_row5 digit_btn" id="num_0" onClick=onClickNum(0)>0</button>  
+  <button class="item15 btn_row5 func_btn" onClick=onClickPoint()>.</button>
+  <div class="item11 btn_row5"></div> 
+  <button class="item12 btn_row5 func_btn" onClick=onClick2ArgOperation(divide)>/</button>  
+  <div class="item10 btn_row6"></div>
+  <div class="item10 btn_row6"></div>
+  <div class="item11 btn_row6"></div> 
+  <button class="item12 btn_row6 func_btn" onClick=onClickCalc()>=</button>  
+</div>
+  <script src="scripts/calculator_script.js"></script>
+</body>
+</html>
