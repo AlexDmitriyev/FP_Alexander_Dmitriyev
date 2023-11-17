@@ -208,8 +208,18 @@
   <div class="form-group my-2">
     <textarea class="form-control" style="resize: none;" id="message" name="Message" rows="4"  placeholder="Your Message" required></textarea>
   </div>
-  <button class="btn btn-primary mt-2" type="submit" onclick=handleSendClick()>Send</button>
+  <button class="btn btn-primary mt-2" type="submit" onclick=handleSendClick(event)>Send</button>
 </form>
+<dialog class="mydialog" id="mydialog">
+	<h6 id="mydialog.title" class="mydialog-title">Title</h6>
+	<div id="mydialog.text" class="mydialog-content">
+		Some text
+	</div>
+	<div class="mydialog-btn">
+		<button class="btn btn-primary mt-auto" id = "closebtn" onclick=closeMyDialog()>Ok</button>
+	</div>
+</dialog>
+
         </div>
       </div>
       <div class="col">

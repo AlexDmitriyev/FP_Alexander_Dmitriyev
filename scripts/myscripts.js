@@ -1,18 +1,22 @@
 const ids = []
 ids.push("first_name", "last_name", "email", "phone", "message");
 
-function handleSendClick() {
+function handleSendClick(e) {
+   e = e || window.event;
+   e.preventDefault();
+
    let s = ''
    for (const id of ids) {
       const item = document.getElementById(id);
       if (!item.checkValidity())
-         s = s + item.name + ': ' + item.validationMessage + '\n';
+         s = s + item.name + ': ' + item.validationMessage + '<BR/>';
       else
 	localStorage.setItem(id, item.value);
    }
 
-   if (!(s === '')) 
-      alert(s);
+   if (!(s === '')) {
+      showDialog("Error", s);
+   }
    else {
 
    if (document.cookie.split(';').filter((item) => item.includes('resume_contact_sent=true')).length) {
@@ -31,7 +35,7 @@ function handleSendClick() {
 	            lname === document.getElementById("last_name").value)			
 		{
 			strMessage = 'Thank you for your interest, ' + fname + ' ' + lname + ', your application is already beeing processed.';
-			alert(strMessage);
+			showDialog("Dialog", strMessage);
 			return;
 		}
 	}
@@ -43,13 +47,24 @@ function handleSendClick() {
 
     document.cookie = 'resume_contact_first_name=' + first_name;
     document.cookie = 'resume_contact_last_name=' + last_name;
-    document.cookie = "test1=Hello";
     
     strMessage = '' + first_name + ' ' + last_name + ',\n';
-    strMessage = 'Thank you for your interest.';     
-    alert(strMessage);
+    strMessage = strMessage + 'Thank you for your interest.';     
+    showDialog("Dialog", strMessage);
   }
 }
+
+function showDialog(title, msgText) {
+ let dlgTitle = document.getElementById("mydialog.title");
+ dlgTitle.innerHTML = title;
+
+ let dlgText = document.getElementById("mydialog.text");
+ dlgText.innerHTML = msgText;
+
+ document.getElementById("mydialog").style.visibility = "visible";
+ document.getElementById("mydialog").showModal();
+}
+
 
 window.onload = function() {
 
@@ -57,4 +72,9 @@ window.onload = function() {
       const item = document.getElementById(id);
       item.value = localStorage.getItem(id);
    }
+}
+
+function closeMyDialog() {
+	document.getElementById("mydialog").close();
+	document.getElementById("mydialog").style.visibility = "hidden";
 }
