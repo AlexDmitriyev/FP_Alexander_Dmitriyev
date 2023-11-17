@@ -1,0 +1,15 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1.5rem;
+  width: 100%;
+  padding: 0rem;
+}
+
+.grid-container-inner {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-row-gap: 1.5rem;
+  width: 100%;
+  padding: 0;
+}
