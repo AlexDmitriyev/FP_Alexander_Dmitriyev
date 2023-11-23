@@ -78,7 +78,7 @@ input {
 	</div>
 </div>
 <div>
-	<table>
+	<table id="weather_icon_group_id">
 	<tr>
 	<td>
 	<img id="weather_icon" class="test-border"></img>	
@@ -89,7 +89,7 @@ input {
 	</table>
 </div>
 <div>
-	<table>
+	<table id="weather_details_group_id">
 	<tr>
 		<td class="weather-details-header">Температура</td>
 		<td class="weather-details-desc" id="temp_id">Temperature details</td>
@@ -105,6 +105,10 @@ input {
 	</table>
 
 </div>
+<div>
+	<h2 id="err_text" style="display:none">Город не найден</h2>
+</div>
+
 </div>
 <script src="scripts/weather_script.js"></script>
 </body>
