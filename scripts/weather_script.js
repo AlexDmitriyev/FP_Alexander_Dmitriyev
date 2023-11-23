@@ -1,4 +1,13 @@
-window.onload=update_weather_report('Самара');
+function getCityOnLoad() {
+	let res0 = document.cookie.split(';');
+	let city = res0.filter((item) => item.includes('town='));
+	if (city.length > 0) 
+		return city[0].trim().substr('town='.length);	
+
+	return 'Самара';
+}
+
+window.onload=update_weather_report(getCityOnLoad());
 
 function onUpdateWeather() {
 	const city = document.getElementById("id_city_input").value;
@@ -31,9 +40,13 @@ function update_weather_report(city) {
 					obj.wind.deg + '°</i></b>'; 
 				document.getElementById("clouds_id").innerHTML='<b><i>'+ obj.clouds.all + '%</i></b>'; 
 				document.getElementById("title_id").innerHTML=`Погода в г. ${city}`;
+				document.getElementById("id_city_input").value = city;
+
 				document.getElementById("err_text").style.display = 'none';
 				document.getElementById("weather_icon_group_id").style.display = 'block';
-				document.getElementById("weather_details_group_id").style.display = 'block';			
+				document.getElementById("weather_details_group_id").style.display = 'block';
+				
+				document.cookie = `town=${city}`;
 			})
 	.catch( err => {
 				document.getElementById("weather_icon_group_id").style.display = 'none';
