@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  padding-left: 0.5rem;
+}
+
+.grid-container3 {
+  display: grid;
+  width: 18rem;
+  grid-template-columns:auto auto;
+  grid-column-gap: 1rem;
+}
+
+.weather-desc {
+  margin-left: 3rem;
+}
+
+.weather-details {
+  margin-left: 3rem;
+}
+
+.weather-details-header {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.weather-details-desc {
+  font-size: 24px;
+  padding-left: 3rem;
+}
+
+.city-group {
+  margin-top: 60px;
+}
+
+.test-border {
+	border-style:solid;
+	border-width: 1px;
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 15rem;
+  font-size: 24px;
+  padding: 4px;
+}
+
+.refresh_btn {
+  font-size: 24px;
+  padding: 4px;
+}
+
+</style>
+</head>
+<body>
+
+<h1 id="title_id">Погода в г. Самара</h1>
+<div class="grid-container2">
+<div>
+	<div class="city-group">
+	<h3 class="label">Город:</h3>
+	<div class="grid-container3">
+	<div><input placeholder="City[,country]" id="id_city_input" value="Cамара"></div>
+	<div><button class="refresh_btn" onclick=onUpdateWeather()><i class="fa fa-refresh"></i></button></div>
+	</div>
+	</div>
+</div>
+<div>
+	<table id="weather_icon_group_id">
+	<tr>
+	<td>
+	<img id="weather_icon" class="test-border"></img>	
+	</td>
+	<td>
+	<h2 id="weather_desc_id" class="weather-desc"></h2>	
+	</tr>
+	</table>
+</div>
+<div>
+	<table id="weather_details_group_id">
+	<tr>
+		<td class="weather-details-header">Температура</td>
+		<td class="weather-details-desc" id="temp_id">Temperature details</td>
+	</tr>
+	<tr>
+		<td class="weather-details-header">Ветер</td>	
+		<td id="wind_id" class="weather-details-desc">Wind details</td>
+	</tr>
+	<tr>
+		<td class="weather-details-header">Облачность</td>
+		<td id="clouds_id" class="weather-details-desc">Clouds details</td>
+	</tr>
+	</table>
+
+</div>
+<div>
+	<h2 id="err_text" style="display:none">Город не найден</h2>
+</div>
+
+</div>
+<script src="scripts/weather_script.js"></script>
+</body>
+</html>
